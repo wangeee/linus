@@ -1,0 +1,84 @@
+                                NGINX
+
+程序program(硬盘)  
+进程process 多进程
+线程thread  进程之下可以开多个线程.多个线程共用一个内存
+
+UI  ps  ai  coredraw
+前端  html  css  div  javascript  htmls
+后端  php java python  数据库
+
+运维开发 
+                                         DAY02
+静态网页
+动态网页
+/var/www/cgi-bin/test.html (shell脚本) 动态: 需要解释器解释
+/var/www/html/index.html   (gif图片) 静态
+静态网页: 图片,视频,doc,html,css,div
+动态网页:java,php,python,perl,ruby
+
+常见的数据库: mysql  oracle  sqlserver   postgresql  mongodb
+
+nginx动静分离
+location匹配用户的地址栏
+location   / { 
+    allow all;
+}
+location  /test  {
+allow 1.1.1.1;
+deny all;
+}
+location /nb {
+   deny all;
+}
+firefox http://192.168.4.5/    可以访问
+firefox http://192.168.4.5/nb  拒绝访问
+firefox http://192.168.4.5/test  1.1.1.1可以访问
+firefox http://192.168.4.5/dacui  访问优先级最低的"/"
+http{
+serner{
+listion 80;
+server_name localtion;
+location / {
+    root html;
+}
+location ~ \.php$ {
+   root html;
+fastcgi_pass 127.0.0.1:9000;
+}
+}
+}
+
+
+tailf 查看日志 
+
+utf-8   万国编码
+
+cat /proc/cpuinfo   查看cpu是几核
+
+目前的目标:
+1.打字速度 160/min
+2.想想今天学的知识点是什么?用在那里?有什么用?怎么用?能够用在什么地方?
+
+数据库里只存放字符文件
+id   名称     大小   分辨率   作者    位置   描述
+01  a.jpg    1M  800*600   f    abc    fasfjhfasfas
+ 
+yum list | grep memcache   可以找到相关服务的包
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
